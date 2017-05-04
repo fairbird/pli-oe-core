@@ -1,11 +1,12 @@
 DESCRIPTION = "meta file for USB DVB drivers"
 
-require conf/license/openpli-gplv2.inc
+require dvb-usb-drivers-meta.inc
 
 DEPENDS = "\
 	enigma2-plugin-drivers-atsc-usb-hauppauge \
 	enigma2-plugin-drivers-atsc-usb-hauppauge-950q \
 	enigma2-plugin-drivers-atsc-usb-hauppauge-955q \
+	enigma2-plugin-drivers-ct2-dvb-usb-pctv292e \
 	enigma2-plugin-drivers-ct2-usb-dvbsky-t330 \
 	enigma2-plugin-drivers-ct2-usb-geniatech-t230 \
 	enigma2-plugin-drivers-s2-usb-dvbsky-s960 \
@@ -21,6 +22,7 @@ DEPENDS = "\
 	enigma2-plugin-drivers-dvb-usb-rtl2832 \
 	enigma2-plugin-drivers-dvb-usb-siano \
 	enigma2-plugin-drivers-dvb-usb-tbs \
+	enigma2-plugin-drivers-dvb-usb-technisat-skystar \
 	"
 
-PR = "r2"
+PV = "1.1"

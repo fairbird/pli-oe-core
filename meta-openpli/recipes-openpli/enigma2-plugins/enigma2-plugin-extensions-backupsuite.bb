@@ -5,8 +5,6 @@ LIC_FILES_CHKSUM = "file://usr/lib/enigma2/python/Plugins/Extensions/BackupSuite
 
 SRC_URI = "git://github.com/Pedro-Newbie/BackupSuite.git"
 
-SRCREV = "${AUTOREV}"
-
 inherit gitpkgv
 
 S = "${WORKDIR}/git"
@@ -15,7 +13,6 @@ DEST = "${D}/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite"
 
 PV = "20+git${SRCPV}"
 PKGV = "20+git${GITPKGV}"
-PR = "r0"
 
 RDEPENDS_${PN} = "mtd-utils mtd-utils-ubifs ofgwrite"
 

@@ -10,7 +10,6 @@ inherit gitpkgv
 PV = "0.10.0+git${SRCPV}"
 PKGV = "0.10.0+git${GITPKGV}"
 
-SRCREV = "d239267be720224019805765376a05f57d643204"
 GITHUB_URI ?= "git://github.com"
 SRC_URI = "${GITHUB_URI}/OpenPLi/${BPN}.git"
 

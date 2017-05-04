@@ -4,15 +4,13 @@ MAINTAINER = "OpenPLi team <info@openpli.org>"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=751419260aa954499f7abaabaa882bbe"
 
-SRCREV = "${AUTOREV}"
-
 DEPENDS = " \
 	avahi \
 	freetype \
 	gettext-native \
 	gstreamer1.0-plugins-base gstreamer1.0 \
 	jpeg \
-	libdreamdvd libdvbsi++ libfribidi libmad libpng libsigc++-1.2 giflib libxml2 \
+	libdreamdvd libdvbsi++ libfribidi libmad libpng libsigc++-2.0 giflib libxml2 \
 	openssl libudfread \
 	python-imaging python-twisted python-wifi \
 	swig-native \
@@ -161,11 +159,9 @@ inherit gitpkgv pythonnative
 PV = "2.7+git${SRCPV}"
 PKGV = "2.7+git${GITPKGV}"
 
-ENIGMA2_BRANCH ?= "master"
+ENIGMA2_BRANCH ?= "develop"
 GITHUB_URI ?= "git://github.com"
 SRC_URI = "${GITHUB_URI}/OpenPLi/${BPN}.git;branch=${ENIGMA2_BRANCH}"
-
-SRC_URI += "file://0001-picload.cpp-adapt-to-newer-giflib-version.patch"
 
 LDFLAGS_prepend = " -lxml2 "
 
@@ -180,7 +176,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit autotools pkgconfig
 
 PACKAGES =+ "enigma2-fonts"
-PV_enigma2-fonts = "2015.02.06"
+PV_enigma2-fonts = "2017.04.30"
 PR_enigma2-fonts = "r0"
 PKGV_enigma2-fonts = "${PV_enigma2-fonts}"
 PKGR_enigma2-fonts = "${PR_enigma2-fonts}"

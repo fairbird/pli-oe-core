@@ -7,11 +7,11 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://LICENCE.miniupnpd;md5=b0dabf9d8e0f871554e309d62ead8d2b"
 
 inherit gitpkgv
-SRCREV = "bb9d584a86d058bdc410e81a0e498ee461e64f9b"
+
 PV = "1.1.0+git${SRCPV}"
 PKGV = "1.1.0+git${GITPKGV}"
 PR = "r0"
-DEPENDS = "libexif libav"
+DEPENDS = "libexif libav libjpeg-turbo libvorbis flac libid3tag sqlite3"
 
 SRC_URI = "git://git.code.sf.net/p/minidlna/git;protocol=git \
 			file://readymedia.sh \
