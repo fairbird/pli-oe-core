@@ -30,8 +30,10 @@ OPTIONAL_PACKAGES += " \
 	dvdfs \
 	evtest \
 	exfat-utils \
+	exteplayer3 \
 	fuse-exfat \
 	gdb \
+	gstplayer \
 	hddtemp \
 	hdparm \
 	inadyn-mt \
@@ -71,11 +73,13 @@ OPTIONAL_PACKAGES += " \
 	rtorrent \
 	sabnzbd \
 	satipclient \
+	screen \
 	sshpass \
 	smartmontools \
 	smbnetfs \
 	strace \
 	tcpdump \
+	tmux \
 	transmission \
 	udpxy \
 	usb-modeswitch \
@@ -104,9 +108,11 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-openmultiboot \
 	enigma2-plugin-extensions-modifyplifullhd \
 	enigma2-plugin-extensions-refreshbouquet \
+	enigma2-plugin-extensions-fallbackreceiver \
 	enigma2-plugin-systemplugins-mountmanager \
 	enigma2-plugin-systemplugins-signalfinder \
 	enigma2-plugin-systemplugins-extnumberzap \
+	enigma2-plugin-systemplugins-serviceapp \
 	enigma2-plugin-extensions-historyzapselector \
 	enigma2-plugin-extensions-lcd4linux \
 	enigma2-plugin-extensions-tmbd \
