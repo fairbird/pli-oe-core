@@ -7,7 +7,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 DEPENDS = "enigma2 uchardet openssl"
 RDEPENDS_${PN} = "enigma2 uchardet openssl"
-RRECOMMENDS_${PN} = "exteplayer3 gstplayer"
+RRECOMMENDS_${PN} = "exteplayer3 ${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gstplayer", d)}"
 
 SRC_URI = "git://github.com/mx3L/serviceapp.git;branch=develop"
 

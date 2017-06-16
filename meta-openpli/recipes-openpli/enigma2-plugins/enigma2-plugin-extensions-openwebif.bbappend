@@ -5,6 +5,7 @@ python do_cleanup () {
     boxtypes = [
         ('dm500hd', 'dm500hd.png', 'dm_normal.png', 'dmm.html'),
         ('dm7020hd', 'dm7020hd.png', 'dmm2.png', 'dmm2.html'),
+        ('dm800', 'dm800.jpg', 'dmm1.png', 'dmm1.html'),
         ('dm8000', 'dm8000.png', 'dmm1.png', 'dmm1.html'),
         ('dm800se', 'dm800se.png', 'dm_normal.png', 'dmm.html'),
         ('osmega', 'osmega.png', 'osmini.png', 'osmini.html'),
@@ -71,6 +72,8 @@ python do_cleanup () {
         ('i55', 'i55.png', 'i55.png', 'i55.html'),
         ('lc', 'lc.png', 'sh1.png', 'sh1.html'),
         ('sh1', 'sh1.png', 'sh1.png', 'sh1.html'),
+        ('spark', 'spark.jpg', 'spark.png', 'spark.html'),
+        ('spark7162', 'spark7162.jpg', 'spark.png', 'spark7162.html'),
     ]
 
     import os
