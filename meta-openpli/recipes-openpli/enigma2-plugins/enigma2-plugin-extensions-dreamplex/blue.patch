@@ -1,0 +1,9 @@
+--- DreamPlex/src/plugin.py.orig	2016-12-06 16:25:42.093519752 +0100
++++ DreamPlex/src/plugin.py	2016-12-06 16:29:51.851639667 +0100
+@@ -326,4 +326,6 @@
+ 	if config.plugins.dreamplex.showInMainMenu.value:
+ 		myList.append(PluginDescriptor(name="DreamPlex", description=_("plex client for enigma2"), where = [PluginDescriptor.WHERE_MENU], fnc=menu_dreamplex))
+ 
++	myList.append(PluginDescriptor(name="DreamPlex", description="plex client for enigma2", where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = main))
++
+ 	return myList
