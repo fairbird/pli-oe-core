@@ -62,3 +62,6 @@
 [submodule "meta-xsarius.pli5"]
 	path = meta-xsarius.pli5
 	url = http://github.com/pli3/meta-xsarius.pli5.git
+[submodule "meta-fulan"]
+	path = meta-fulan
+	url = https://github.com/MastaG/meta-fulan.git
