@@ -56,6 +56,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-xp \
 	$(CURDIR)/meta-xtrend \
 	$(CURDIR)/meta-formuler \
+	$(CURDIR)/meta-fulan \
 	$(CURDIR)/meta-gfutures \
 	$(CURDIR)/meta-xpeedc \
 	$(CURDIR)/meta-wetek \
