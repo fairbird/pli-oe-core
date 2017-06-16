@@ -35,7 +35,11 @@ PARALLEL_MAKE ?= -j $(NR_CPU)
 
 XSUM ?= md5sum
 
-BUILD_DIR = $(CURDIR)/build
+ifeq ($(MACHINE),dm800)
+	BUILD_DIR = $(CURDIR)/build_dm800
+else
+	BUILD_DIR = $(CURDIR)/build
+endif
 TOPDIR = $(BUILD_DIR)
 DL_DIR = $(CURDIR)/sources
 SSTATE_DIR = $(TOPDIR)/sstate-cache
