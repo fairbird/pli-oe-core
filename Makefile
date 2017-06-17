@@ -194,9 +194,7 @@ $(CURDIR)/site.conf:
 	@echo 'PARALLEL_MAKE = "$(PARALLEL_MAKE)"' >> $@
 	@echo 'BUILD_OPTIMIZATION = "-march=native -O2 -pipe"' >> $@
 	@echo 'DL_DIR = "$(DL_DIR)"' >> $@
-	@echo 'RM_OLD_IMAGE = "1"' >> $@
 	@echo 'INHERIT += "rm_work"' >> $@
-	@echo 'RM_WORK_EXCLUDE += "openpli-enigma2-image"' >> $@
 	@echo 'PTI_NP_PATH = "$(HOME_DIR)/sources/pti_np"' >> $@
 
 BBLAYERS_CONF_HASH := $(call hash, \
