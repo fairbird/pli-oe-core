@@ -195,6 +195,7 @@ $(CURDIR)/site.conf:
 	@echo 'BUILD_OPTIMIZATION = "-march=native -O2 -pipe"' >> $@
 	@echo 'DL_DIR = "$(DL_DIR)"' >> $@
 	@echo 'INHERIT += "rm_work"' >> $@
+	@echo 'PTI_NP_PATH = "$(HOME_DIR)/sources/pti_np"' >> $@
 
 BBLAYERS_CONF_HASH := $(call hash, \
 	'BBLAYERS_CONF_VERSION = "0"' \
