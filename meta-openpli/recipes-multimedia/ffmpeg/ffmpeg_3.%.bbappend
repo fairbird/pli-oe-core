@@ -8,8 +8,9 @@ DEPENDS =+ " libxml2 "
 
 PACKAGECONFIG[librtmp] = "--enable-librtmp,--disable-librtmp,rtmpdump"
 PACKAGECONFIG[libbluray] = "--enable-libbluray --enable-protocol=bluray,--disable-libbluray,libbluray"
+PACKAGECONFIG[libfreetype] = "--enable-libfreetype,--disable-libfreetype,freetype"
 
-PACKAGECONFIG = "avdevice avfilter avcodec avformat swresample swscale postproc \
+PACKAGECONFIG = "avdevice avfilter avcodec avformat swresample swscale postproc libfreetype \
 		bzlib gpl theora x264 openssl avresample libvorbis vpx librtmp libbluray"
 
 PACKAGES =+ " libavcodec53 libavformat53 libav "
