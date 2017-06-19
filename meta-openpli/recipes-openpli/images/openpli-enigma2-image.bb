@@ -60,6 +60,7 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-systemplugins-sparkvfdcontrol \
 	enigma2-plugin-systemplugins-sh4osdadjustment \
 	enigma2-plugin-systemplugins-sh4boostercontrol \
+	enigma2-plugin-systemplugins-serviceapp \
 	enigma2-plugin-extensions-blurayplayer \
 	enigma2-plugin-extensions-youtube", "\
 	enigma2-plugin-systemplugins-osdpositionsetup \
