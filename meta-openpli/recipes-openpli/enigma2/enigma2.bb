@@ -169,7 +169,7 @@ PKGV = "2.7+git${GITPKGV}"
 
 ENIGMA2_BRANCH ?= "develop"
 GITHUB_URI ?= "git://github.com"
-SRC_URI = "${@bb.utils.contains("TARGET_ARCH", "sh4", "${GITHUB_URI}/MastaG/enigma2-openpli-fulan.git;branch=master" , "${GITHUB_URI}/OpenPLi/${BPN}.git;branch=${ENIGMA2_BRANCH}", d)}"
+SRC_URI = "${@bb.utils.contains("TARGET_ARCH", "sh4", "${GITHUB_URI}/MastaG/enigma2-openpli-fulan.git;branch=master" , "${GITHUB_URI}/MastaG/${BPN}.git;branch=${ENIGMA2_BRANCH}", d)}"
 
 LDFLAGS_prepend = " ${@bb.utils.contains("TARGET_ARCH", "sh4", "", "-lxml2", d)} "
 
