@@ -1,0 +1,11 @@
+--- MX_HQ9W/usr/share/enigma2/MX_HQ9W/skin.xml.orig	2016-07-11 18:20:18.895689176 +0200
++++ MX_HQ9W/usr/share/enigma2/MX_HQ9W/skin.xml	2016-07-11 18:20:34.640262687 +0200
+@@ -5976,7 +5976,7 @@
+ </screen>
+ <screen name="Screensaver" position="fill" flags="wfNoBorder">
+ <eLabel position="fill" backgroundColor="#02000000" zPosition="0"/>
+-<widget name="picture" pixmap="distro-logo.png" position="0,0" size="500,500" alphatest="blend" zPosition="1"/>
++<widget name="picture" pixmap="pli.png" position="0,0" size="500,500" alphatest="blend" zPosition="1"/>
+ </screen>
+ <screen name="PVRState" flags="wfNoBorder" position="50,50" size="180,50" backgroundColor="transparent" zPosition="8">
+ <ePixmap position="0,0" size="180,50" pixmap="MX_HQ9W/icons/pvrbg.png" transparent="1" zPosition="7" alphatest="blend" />
