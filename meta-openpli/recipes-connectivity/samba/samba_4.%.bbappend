@@ -27,7 +27,6 @@ EXTRA_OECONF_remove = " \
 SRC_URI += " \
            file://smb.conf \
            file://samba.sh \
-           file://22-disable-python.patch \
            "
 
 FILES_${PN}-base += "${sysconfdir}/init.d/samba.sh"
