@@ -103,17 +103,18 @@ python populate_packages_prepend () {
                     else:
                         rdepends.append(depend)
                 rdepends = ' '.join(rdepends)
-                d.setVar('RDEPENDS_' + full_package, rdepends)
+                bb.data.setVar('RDEPENDS_' + full_package, rdepends, d)
             elif line.startswith('Recommends: '):
-                d.setVar('RRECOMMENDS_' + full_package, line[12:])
+                bb.data.setVar('RRECOMMENDS_' + full_package, line[12:], d)
             elif line.startswith('Description: '):
-                d.setVar('DESCRIPTION_' + full_package, line[13:])
+                bb.data.setVar('DESCRIPTION_' + full_package, line[13:], d)
             elif line.startswith('Replaces: '):
-                d.setVar('RREPLACES_' + full_package, ' '.join(line[10:].split(', ')))
+                bb.data.setVar('RREPLACES_' + full_package, ' '.join(line[10:].split(', ')), d)
             elif line.startswith('Conflicts: '):
-                d.setVar('RCONFLICTS_' + full_package, ' '.join(line[11:].split(', ')))
+                bb.data.setVar('RCONFLICTS_' + full_package, ' '.join(line[11:].split(', ')), d)
             elif line.startswith('Maintainer: '):
-                d.setVar('MAINTAINER_' + full_package, line[12:])
+                bb.data.setVar('MAINTAINER_' + full_package, line[12:], d)
+
 
     mydir = d.getVar('D') + "/../git/"
     for package in d.getVar('PACKAGES').split():
