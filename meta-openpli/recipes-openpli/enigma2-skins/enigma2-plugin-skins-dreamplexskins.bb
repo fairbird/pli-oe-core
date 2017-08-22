@@ -8,9 +8,8 @@ PACKAGE_ARCH = "all"
 require conf/license/license-gplv2.inc
 
 VER ="1.0"
-PR = "r0"
 
-SRC_URI = "file://skins.tar.gz"
+SRC_URI = "file://skins.zip"
 
 S = "${WORKDIR}"
 

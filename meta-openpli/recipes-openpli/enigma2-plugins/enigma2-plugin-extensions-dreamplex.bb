@@ -13,7 +13,7 @@ RDEPENDS_${PN} += "${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gstreamer1.0-
 
 SRC_URI = " \
 	git://github.com/DonDavici/DreamPlex.git;protocol=git \
-	file://skin.tar.gz \
+	file://skin.zip \
 	file://blue.patch;patch=1 \
 	"
 
