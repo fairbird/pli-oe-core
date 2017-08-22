@@ -55,6 +55,7 @@ BBLAYERS ?= \
 	$(CURDIR)/openembedded-core/meta \
 	$(CURDIR)/meta-openpli \
 	$(CURDIR)/meta-dream \
+	$(CURDIR)/meta-dreambox \
 	$(CURDIR)/meta-vuplus \
 	$(CURDIR)/meta-xsarius.pli5 \
 	$(CURDIR)/meta-xp \
@@ -62,6 +63,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-formuler \
 	$(CURDIR)/meta-fulan \
 	$(CURDIR)/meta-gfutures \
+	$(CURDIR)/meta-ini \
 	$(CURDIR)/meta-xpeedc \
 	$(CURDIR)/meta-wetek \
 	$(CURDIR)/meta-zgemma \
