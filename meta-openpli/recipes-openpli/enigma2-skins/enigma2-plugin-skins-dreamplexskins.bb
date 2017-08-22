@@ -17,5 +17,5 @@ FILES_${PN} = "/usr/*"
 
 do_install() {
     mkdir -p ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins
-    cp -rp ${S}/DreamPlexSkins/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/
+    cp -r ${S}/DreamPlexSkins/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/
 }

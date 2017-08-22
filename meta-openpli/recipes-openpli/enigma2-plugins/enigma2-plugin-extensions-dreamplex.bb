@@ -29,7 +29,7 @@ EXTRA_OECONF = " \
 do_install_append() {
 	mkdir -p ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex
 	rm -f ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/default_FHD/skin.xml
-	cp -rp ${WORKDIR}/DreamPlex/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/
+	cp -r ${WORKDIR}/DreamPlex/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/
 }
 
 PACKAGES += "enigma2-plugin-extensions-dreamplex-meta"
