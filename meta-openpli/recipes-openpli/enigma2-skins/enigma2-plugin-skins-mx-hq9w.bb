@@ -29,6 +29,6 @@ FILES_${PN} = "/usr/*"
 do_install() {
     rm -Rf ${S}/usr/uninstall
     rm -Rf ${S}/usr/share/fonts
-    cp -rp ${S}/usr ${D}/
+    cp -r ${S}/usr ${D}/
     install -m 0644 ${WORKDIR}/pli.png ${D}/usr/share/enigma2/MX_HQ9W/
 }

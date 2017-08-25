@@ -25,5 +25,5 @@ FILES_${PN} = "/usr/*"
 
 do_install() {
     rm -Rf ${S}/usr/share/fonts
-    cp -rp ${S}/usr ${D}/
+    cp -r ${S}/usr ${D}/
 }
