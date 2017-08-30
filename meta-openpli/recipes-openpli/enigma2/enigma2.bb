@@ -8,13 +8,13 @@ DEPENDS = " \
 	avahi \
 	freetype \
 	gettext-native \
+	gstreamer1.0-plugins-base gstreamer1.0 \
 	jpeg \
 	libdreamdvd libdvbsi++ libfribidi libmad libpng libsigc++-2.0 giflib libxml2 \
 	openssl libudfread \
 	python-imaging python-twisted python-wifi \
 	swig-native \
 	tuxtxt-enigma2 \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "libmmeimage libmme-host libeplayer3", "gstreamer1.0-plugins-base gstreamer1.0", d)} \
 	"
 
 # SoftcamSetup is integrated now
@@ -27,20 +27,18 @@ RDEPENDS_${PN} = " \
 	ethtool \
 	glibc-gconv-iso8859-15 \
 	${PYTHON_RDEPS} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "libmme-host", "", d)} \
 	"
 
 RRECOMMENDS_${PN} = " \
 	enigma2-plugin-skins-pli-hd \
+	gstreamer1.0-plugin-subsink \
 	glib-networking \
 	hotplug-e2-helper \
 	glibc-gconv-utf-16 \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", " \
-	gstreamer1.0-plugin-subsink \
 	${GST_BASE_RDEPS} \
 	${GST_GOOD_RDEPS} \
 	${GST_BAD_RDEPS} \
-	${GST_UGLY_RDEPS}", d)} \
+	${GST_UGLY_RDEPS} \
 	"
 
 PYTHON_RDEPS = " \
@@ -169,9 +167,9 @@ PKGV = "2.7+git${GITPKGV}"
 
 ENIGMA2_BRANCH ?= "develop"
 GITHUB_URI ?= "git://github.com"
-SRC_URI = "${@bb.utils.contains("TARGET_ARCH", "sh4", "${GITHUB_URI}/MastaG/enigma2-openpli-fulan.git;branch=master" , "${GITHUB_URI}/MastaG/${BPN}.git;branch=${ENIGMA2_BRANCH}", d)}"
+SRC_URI = "${GITHUB_URI}/OpenPLi/${BPN}.git;branch=${ENIGMA2_BRANCH}"
 
-LDFLAGS_prepend = " ${@bb.utils.contains("TARGET_ARCH", "sh4", "", "-lxml2", d)} "
+LDFLAGS_prepend = " -lxml2 "
 
 S = "${WORKDIR}/git"
 
@@ -200,7 +198,7 @@ EXTRA_OECONF = "\
 	--with-libsdl=no --with-boxtype=${MACHINE} \
 	--enable-dependency-tracking \
 	ac_cv_prog_c_openmp=-fopenmp \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "--enable-libeplayer3 --disable-gstreamer --enable-${MACHINE} --with-lcd", "--with-gstversion=1.0", d)} \
+	--with-gstversion=1.0 \
 	${@get_crashaddr(d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "textlcd", "--with-textlcd" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "7segment", "--with-7segment" , "", d)} \

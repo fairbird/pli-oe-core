@@ -24,7 +24,7 @@ OPTIONAL_PACKAGES += " \
 	diffutils \
 	djmount \
 	dosfstools \
-	${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "", "dvb-apps", d)} \
+	dvb-apps \
 	dvblast \
 	dvbsnoop \
 	dvdfs \
@@ -32,8 +32,8 @@ OPTIONAL_PACKAGES += " \
 	exfat-utils \
 	exteplayer3 \
 	fuse-exfat \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gdb", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gstplayer", d)} \
+	gdb \
+	gstplayer \
 	hddtemp \
 	hdparm \
 	inadyn-mt \
@@ -75,7 +75,6 @@ OPTIONAL_PACKAGES += " \
 	sabnzbd \
 	satipclient \
 	screen \
-	sshfs-fuse \
 	sshpass \
 	smartmontools \
 	smbnetfs \
@@ -89,7 +88,7 @@ OPTIONAL_PACKAGES += " \
 	v4l-utils \
 	vim \
 	wget \
-	${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "", "wscan", d)} \
+	wscan \
 	zeroconf \
 	zip \
 	zsh \
@@ -104,7 +103,6 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-drivers-usbserial \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-dlnaserver \
-	enigma2-plugin-extensions-dreamplex \
 	enigma2-plugin-extensions-blurayplayer \
 	enigma2-plugin-extensions-xmltvimport \
 	enigma2-plugin-extensions-youtube \
@@ -125,9 +123,6 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-security-firewall \
 	enigma2-plugin-skins-pli-hd \
 	enigma2-plugin-skins-pli-hd-fullnight \
-	enigma2-plugin-skins-dreamplexskins \
-	enigma2-plugin-skins-mx-hq9w \
-	enigma2-plugin-skins-mx-hq7 \
 	enigma2-plugins \
 	enigma2-skins \
 	picons-enigma2-meta \

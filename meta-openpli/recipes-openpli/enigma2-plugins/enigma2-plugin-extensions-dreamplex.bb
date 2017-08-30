@@ -9,7 +9,7 @@ PV = "2.1.3+git${SRCPV}"
 PKGV = "2.1.3+git${GITPKGV}"
 
 DEPENDS = "python"
-RDEPENDS_${PN} += "${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gstreamer1.0-plugins-bad-hls", d)} curl mjpegtools python-ctypes libshowiframe0"
+RDEPENDS_${PN} += "curl mjpegtools python-ctypes libshowiframe0"
 
 SRC_URI = " \
 	git://github.com/DonDavici/DreamPlex.git;protocol=git \

@@ -35,6 +35,7 @@ EXTERNAL_WIFI_DRIVERS = " \
 	"
 
 ENIGMA2_PLUGINS = " \
+	enigma2-plugin-extensions-audiosync \
 	enigma2-plugin-extensions-autobackup \
 	enigma2-plugin-extensions-cutlisteditor \
 	enigma2-plugin-extensions-graphmultiepg \
@@ -54,24 +55,12 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-systemplugins-softwaremanager \
 	enigma2-plugin-systemplugins-videomode \
 	enigma2-plugin-systemplugins-videotune \
-	\
-	${@bb.utils.contains("TARGET_ARCH", "sh4", " \
-	kernel-module-block2mtd libcrypto \
-	enigma2-plugin-systemplugins-sparkvfdcontrol \
-	enigma2-plugin-systemplugins-sh4osdadjustment \
-	enigma2-plugin-systemplugins-sh4boostercontrol \
-	enigma2-plugin-systemplugins-serviceapp \
-	enigma2-plugin-extensions-blurayplayer \
-	enigma2-plugin-extensions-youtube", "\
 	enigma2-plugin-systemplugins-osdpositionsetup \
-	enigma2-plugin-extensions-audiosync", d)} \
 	\
 	${@bb.utils.contains("MACHINE_FEATURES", "3dtv", "enigma2-plugin-systemplugins-osd3dsetup" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "hdmicec", "enigma2-plugin-systemplugins-hdmicec" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "wlan", "enigma2-plugin-systemplugins-wirelesslan", "", d)} \
-	\
-	${@bb.utils.contains("MACHINE_FEATURES", "spark7162", "enigma2-plugin-systemplugins-uniontunertype", "", d)} \
 	\
 	${@bb.utils.contains('OPENPLI_FEATURES', 'ci', 'enigma2-plugin-systemplugins-commoninterfaceassignment', '', d)} \
 	${@bb.utils.contains('OPENPLI_FEATURES', 'dvd', 'enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer', '', d)} \
@@ -100,7 +89,6 @@ IMAGE_INSTALL += " \
 	${@bb.utils.contains("MACHINE_FEATURES", "kernelwifi", "${KERNEL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "extrakernelwifi", "${EXTRA_KERNEL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "externalwifi", "${EXTERNAL_WIFI_DRIVERS}", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "legacyrt", "rt7777-legacy", "rt7777", d)} \
 	\
 	${@bb.utils.contains('OPENPLI_FEATURES', 'dvd', 'cdtextinfo', '', d)} \
 	"

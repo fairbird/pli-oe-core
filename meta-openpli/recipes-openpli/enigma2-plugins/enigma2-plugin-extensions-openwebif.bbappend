@@ -1,13 +1,23 @@
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
+SRC_URI += "file://get-rid-of-orgdream-check.patch \
+"
+
 python do_cleanup () {
     boxtypes = [
+        ('dm800', 'dm800.jpg', 'dm_normal.png', 'dmm.html'),
         ('dm500hd', 'dm500hd.png', 'dm_normal.png', 'dmm.html'),
+        ('dm500hdv2', 'dm500hd.png', 'dm_normal.png', 'dmm.html'),
         ('dm7020hd', 'dm7020hd.png', 'dmm2.png', 'dmm2.html'),
-        ('dm800', 'dm800.jpg', 'dmm1.png', 'dmm1.html'),
+        ('dm7020hdv2', 'dm7020hd.png', 'dmm2.png', 'dmm2.html'),
         ('dm8000', 'dm8000.png', 'dmm1.png', 'dmm1.html'),
         ('dm800se', 'dm800se.png', 'dm_normal.png', 'dmm.html'),
+        ('dm800sev2', 'dm800se.png', 'dm_normal.png', 'dmm.html'),
+        ('dm7080', 'dm7080.png', 'dmm2.png', 'dmm2.html'),
+        ('dm520', 'dm520.png', 'dmm2.png', 'dmm2.html'),
+        ('dm820', 'dm820.png', 'dmm2.png', 'dmm2.html'),
+        ('dm900', 'dm900.png', 'dmm2.png', 'dmm2.html'),
         ('osmega', 'osmega.png', 'osmini.png', 'osmini.html'),
         ('osmini', 'osmini.png', 'osmini.png', 'osmini.html'),
         ('osminiplus', 'osminiplus.png', 'osmini.png', 'osmini.html'),
@@ -98,9 +108,6 @@ python do_cleanup () {
                 exception = 'et7500.png'
             elif x[0] == 'xpeedc':
                 exception = 'xpeedlx.png'
-            elif x[0] == 'dm8000':
-                dir = '%s/public/static/remotes' % pluginpath
-                os.system('cp %s/dmm1.html %s/dmm.html' % (dir, dir))
             break
 
     for root, dirs, files in os.walk(images + 'boxes', topdown=False):
