@@ -1,12 +1,12 @@
 DESCRIPTION = "Rytec's sources and channels for the XMLTV importer"
-MAINTAINER = "MiLo, rytec @ pli-images.org"
+MAINTAINER = "MiLo, rytec @ openpli.org"
 
 require conf/license/openpli-gplv2.inc
 
 inherit allarch
 
-PV = "20170807"
-SRC_URI = "http://www.milosoftware.com/sat/rytec.sources.xml.${PV}.gz"
+PV = "20170822"
+SRC_URI = "http://www.vuplus-community.net/rytec/sources/rytec.sources.xml.${PV}.gz"
 S = "${WORKDIR}"
 
 PACKAGES = "${PN}"
@@ -18,5 +18,5 @@ do_install() {
 	install -m 644 ${S}/rytec.sources.xml.${PV} ${D}/etc/epgimport/rytec.sources.xml
 }
 
-SRC_URI[sha256sum] = "1b9f17a6845357b9c8cd4be495581aa6825ef2bd55da9f3b6880398d01c22b9a"
+SRC_URI[sha256sum] = "c488a047947b32b5c0de194ac05fdaa2053c0444e9424792ae089e683fa6a434"
 

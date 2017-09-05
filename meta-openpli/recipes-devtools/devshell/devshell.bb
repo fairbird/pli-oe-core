@@ -15,12 +15,12 @@ def devshell_emit_env(o, d, all=False, funcwhitelist=None):
     env = bb.data.keys(d)
 
     for e in env:
-        if d.getVarFlag(e):
+        if d.getVarFlag(e, "func"):
             continue
         bb.data.emit_var(e, o, d, all) and o.write('\n')
 
     for e in env:
-        if not d.getVarFlag(e):
+        if not d.getVarFlag(e, "func"):
             continue
         if not funcwhitelist:
             bb.data.emit_var(e, o, d) and o.write('\n')
@@ -34,7 +34,7 @@ python do_compile() {
         import os
         import os.path
 
-        workdir = d.getVar('WORKDIR')
+        workdir = d.getVar('WORKDIR', True)
         shellfile = os.path.join(workdir, bb.data.expand("${TARGET_PREFIX}${DISTRO}-${MACHINE}-devshell", d))
         f = open(shellfile, "w")
         # emit variables and shell functions
