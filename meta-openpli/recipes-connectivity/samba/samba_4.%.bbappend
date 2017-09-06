@@ -8,6 +8,12 @@ EXTRA_OECONF += " \
                  --with-sockets-dir=${localstatedir}/run \
                  --with-logfilebase=${localstatedir}/log \
                  --nopyc \
+                 --disable-iprint \
+                 --without-ads \
+                 --without-dnsupdate \
+                 --without-quotas \
+                 --without-winbind \
+                 --without-syslog \
                 "
 
 EXTRA_OECONF_remove = " \
@@ -23,6 +29,10 @@ SRC_URI += " \
            "
 
 FILES_${PN}-base += "${sysconfdir}/init.d/samba.sh"
+
+do_install_prepend() {
+	install -d ${D}${sysconfdir}/sudoers.d
+}
 
 do_install_append() {
 	rm -fR ${D}/var
