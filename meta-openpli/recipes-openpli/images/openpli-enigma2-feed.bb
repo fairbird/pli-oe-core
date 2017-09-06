@@ -38,7 +38,7 @@ OPTIONAL_PACKAGES += " \
 	hdparm \
 	inadyn-mt \
 	inetutils \
-	iperf \
+	iperf3 \
 	iproute2 \
 	iputils \
 	joe \
