@@ -6,9 +6,9 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=a23a74b3f4caf9616230789d94217acb"
 
 inherit autotools-brokensep gitpkgv pythonnative gettext
 
-PV = "2.1+git${SRCPV}"
-PKGV = "2.1+git${GITPKGV}"
-PR = "r0"
+PV = "2.2+git${SRCPV}"
+PKGV = "2.2+git${GITPKGV}"
+PR = "r1"
 
 SRC_URI = "git://github.com/OpenViX/PlexDVRAPI.git;protocol=git"
 
@@ -20,8 +20,6 @@ EXTRA_OECONF = " \
     "
 
 S = "${WORKDIR}/git"
-
-DEPENDS = "enigma2"
 
 RDEPENDS_${PN} = " \
     python-argparse \
