@@ -9,6 +9,7 @@ SRC_URI_append += "\
 	file://brcmstb-settings.patch \
 	file://input-devices.patch \
 	file://e2player.patch \
+	file://quit.patch \
 	${@bb.utils.contains('MACHINE_FEATURES', 'v3d-nxpl', 'file://EGLNativeTypeV3D-nxpl.patch', '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'mali', 'file://EGLNativeTypeMali.patch', '', d)} \
 	"
@@ -30,7 +31,10 @@ EXTRA_OECONF_osmega += "--with-gpu=v3dplatform"
 EXTRA_OECONF_wetekplay += "--with-gpu=mali"
 
 EXTRA_KODI ?= "empty"
+EXTRA_KODI_vuduo2 = "vuplus"
+EXTRA_KODI_vusolo2 = "vuplus"
 EXTRA_KODI_vusolo4k = "vuplus"
+EXTRA_KODI_vusolose = "vuplus"
 EXTRA_KODI_vuultimo4k = "vuplus"
 EXTRA_KODI_vuuno4k = "vuplus"
 require kodi-${EXTRA_KODI}.inc
