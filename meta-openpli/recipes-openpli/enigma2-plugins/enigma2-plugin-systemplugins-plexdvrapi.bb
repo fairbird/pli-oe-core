@@ -4,10 +4,7 @@ MAINTAINER = "OpenViX"
 LICENSE = "Proprietary"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=a23a74b3f4caf9616230789d94217acb"
 
-DEPENDS += "python"
-
 inherit gitpkgv distutils-openplugins
-
 PV = "3.0+git${SRCPV}"
 PKGV = "3.0+git${GITPKGV}"
 
