@@ -1,8 +1,8 @@
 require linux-firmware.inc
 
-DESCRIPTION = "Firmware for TBS 5925"
+DESCRIPTION = "Firmware for TBS 5520/5520SE"
 
-FW = "dvb-usb-tbsqbox-id5925.fw"
+FW = "dvb-usb-tbsqbox-id5520.fw"
 
 do_install() {
         install -d ${D}${base_libdir}/firmware
