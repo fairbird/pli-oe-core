@@ -13,7 +13,7 @@ DEPENDS = "glib-2.0-native gstreamer1.0 gstreamer1.0-plugins-base libdca"
 
 GSTVERSION = "1.0"
 
-SRC_URI = "git://github.com/OpenPLi/gst-plugin-dvbmediasink.git;branch=gst-1.0"
+SRC_URI = "git://github.com/christophecvr/gstreamer1.0-plugin-multibox-dvbmediasink.git;branch=openatv-dev-exp"
 
 S = "${WORKDIR}/git"
 
@@ -31,4 +31,4 @@ FILES_${PN}-dbg += "${libdir}/gstreamer-${GSTVERSION}/.debug"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-EXTRA_OECONF = "${DVBMEDIASINK_CONFIG} --with-gstversion=${GSTVERSION}"
+EXTRA_OECONF = "${DVBMEDIASINK_CONFIG} --with-gstversion=${GSTVERSION} --with-machine=${MACHINE}"

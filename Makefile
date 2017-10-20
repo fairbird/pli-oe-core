@@ -35,7 +35,11 @@ PARALLEL_MAKE ?= -j $(NR_CPU)
 
 XSUM ?= md5sum
 
-BUILD_DIR = $(CURDIR)/build
+ifeq ($(MACHINE),dm800)
+	BUILD_DIR = $(CURDIR)/build_dm800
+else
+	BUILD_DIR = $(CURDIR)/build
+endif
 TOPDIR = $(BUILD_DIR)
 DL_DIR = $(CURDIR)/sources
 SSTATE_DIR = $(TOPDIR)/sstate-cache
@@ -50,13 +54,15 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-openembedded/meta-python \
 	$(CURDIR)/openembedded-core/meta \
 	$(CURDIR)/meta-openpli \
-	$(CURDIR)/meta-dream \
+	$(CURDIR)/meta-dreambox \
 	$(CURDIR)/meta-vuplus \
 	$(CURDIR)/meta-xsarius.pli5 \
 	$(CURDIR)/meta-xp \
 	$(CURDIR)/meta-xtrend \
 	$(CURDIR)/meta-formuler \
+	$(CURDIR)/meta-fulan \
 	$(CURDIR)/meta-gfutures \
+	$(CURDIR)/meta-ini \
 	$(CURDIR)/meta-xpeedc \
 	$(CURDIR)/meta-wetek \
 	$(CURDIR)/meta-zgemma \
@@ -198,6 +204,7 @@ $(CURDIR)/site.conf:
 	@echo 'BUILD_OPTIMIZATION = "-O2 -pipe"' >> $@
 	@echo 'DL_DIR = "$(DL_DIR)"' >> $@
 	@echo 'INHERIT += "rm_work"' >> $@
+	@echo 'PTI_NP_PATH = "$(HOME_DIR)/sources/pti_np"' >> $@
 
 BBLAYERS_CONF_HASH := $(call hash, \
 	'BBLAYERS_CONF_VERSION = "0"' \

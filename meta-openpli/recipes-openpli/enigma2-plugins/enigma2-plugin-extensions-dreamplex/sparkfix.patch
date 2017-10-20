@@ -1,0 +1,10 @@
+--- DreamPlex/src/keymap.xml.orig	2016-01-30 00:19:34.689984344 +0100
++++ DreamPlex/src/keymap.xml	2016-01-30 00:19:40.032845967 +0100
+@@ -91,7 +91,6 @@
+ 
+     <map context="DPS_Player">
+ 		<key id="KEY_BLUE" mapto="seekManual" flags="m" />
+-		<key id="KEY_RED" mapto="seekManual" flags="m" />
+         <key id="KEY_PREVIOUS" mapto="playPrevious" flags="m" />
+         <key id="KEY_NEXT" mapto="playNext" flags="m" />
+         <key id="KEY_TV" mapto="keyTv" flags="m" />

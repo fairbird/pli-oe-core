@@ -65,3 +65,12 @@
 [submodule "meta-gigablue"]
 	path = meta-gigablue
 	url = https://github.com/GigaBlue-STB/meta-gigablue
+[submodule "meta-fulan"]
+	path = meta-fulan
+	url = http://github.com/MastaG/meta-fulan.git
+[submodule "meta-ini"]
+	path = meta-ini
+	url = https://github.com/MastaG/meta-ini.git
+[submodule "meta-dreambox"]
+	path = meta-dreambox
+	url = https://github.com/MastaG/meta-dream.git
