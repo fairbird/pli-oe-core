@@ -35,6 +35,7 @@ RRECOMMENDS_${PN} = " \
 	glib-networking \
 	hotplug-e2-helper \
 	glibc-gconv-utf-16 \
+	python-sendfile \
 	${GST_BASE_RDEPS} \
 	${GST_GOOD_RDEPS} \
 	${GST_BAD_RDEPS} \
@@ -47,6 +48,7 @@ PYTHON_RDEPS = " \
 	python-core \
 	python-crypt \
 	python-fcntl \
+	python-importlib \
 	python-lang \
 	python-netclient \
 	python-netserver \
@@ -182,10 +184,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit autotools pkgconfig
 
 PACKAGES =+ "enigma2-fonts"
-PV_enigma2-fonts = "2017.04.30"
-PR_enigma2-fonts = "r0"
-PKGV_enigma2-fonts = "${PV_enigma2-fonts}"
-PKGR_enigma2-fonts = "${PR_enigma2-fonts}"
+PKGV_enigma2-fonts = "2017.04.30"
 FILES_enigma2-fonts = "${datadir}/fonts"
 
 def get_crashaddr(d):
