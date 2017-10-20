@@ -71,6 +71,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-spycat \
 	$(CURDIR)/meta-gi \
 	$(CURDIR)/meta-sab \
+	$(CURDIR)/meta-gigablue \
 	$(CURDIR)/meta-local \
 	$(CURDIR)/meta-qt5
 

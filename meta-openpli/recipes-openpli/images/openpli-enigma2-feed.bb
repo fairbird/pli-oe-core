@@ -21,6 +21,7 @@ OPTIONAL_PACKAGES += " \
 	autossh \
 	ctorrent \
 	cups \
+	davfs2 \
 	diffutils \
 	djmount \
 	dosfstools \
@@ -115,6 +116,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-systemplugins-extnumberzap \
 	enigma2-plugin-systemplugins-serviceapp \
 	enigma2-plugin-systemplugins-plexdvrapi \
+	enigma2-plugin-systemplugins-quadpip \
 	enigma2-plugin-extensions-historyzapselector \
 	enigma2-plugin-extensions-lcd4linux \
 	enigma2-plugin-extensions-tmbd \
@@ -131,6 +133,7 @@ ENIGMA2_OPTIONAL = " \
 	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dreambox", "", "enigma2-plugin-extensions-backupsuite", d)} \
 	${@bb.utils.contains('EXTRA_IMAGEDEPENDS', 'vuplus-tuner-turbo', 'enigma2-plugin-drivers-dvb-usb-turbo', '', d)} \
+	${@bb.utils.contains('OPENPLI_FEATURES', 'kodi', 'enigma2-plugin-extensions-kodi', '', d)} \
 	dvb-usb-drivers-meta \
 	cdtextinfo \
 	meta-enigma2-dvdburn \
