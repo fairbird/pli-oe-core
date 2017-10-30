@@ -17,7 +17,7 @@ S = "${WORKDIR}/git"
 
 do_configure_prepend() {
 	# Remove this macro as it's provided by glib-2.0-native
-	rm ${S}/m4/glib-gettext.m4
+	rm -f ${S}/m4/glib-gettext.m4
 }
 
 inherit gitpkgv autotools-brokensep pkgconfig gettext
