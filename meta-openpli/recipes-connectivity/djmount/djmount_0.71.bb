@@ -1,7 +1,7 @@
 DESCRIPTION = "mount UPnP server content as a linux filesystem"
 HOMEPAGE = "http://djmount.sourceforge.net/"
 LICENSE = "GPLv2+"
-DEPENDS = "libupnp fuse"
+DEPENDS = "fuse"
 RDEPENDS_${PN} = "fuse"
 PR = "r5"
 
@@ -12,14 +12,13 @@ INITSCRIPT_PARAMS = "defaults"
 
 inherit autotools update-rc.d pkgconfig gettext
 
-EXTRA_OECONF = "--with-external-libupnp --with-fuse-prefix='${STAGING_LIBDIR}'"
+EXTRA_OECONF = "--with-fuse-prefix='${STAGING_LIBDIR}'"
+CFLAGS_append = " -std=gnu89 "
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/djmount/djmount-0.71.tar.gz \
 	file://init \
 	file://configure.ac.patch \
 	file://rt_bool_arg_enable.m4.patch \
-	file://001-libupnp-1.6.6.diff \
-	file://002-libupnp-1.6.13.diff \
 	file://003-support-fstab-mounting.diff \
 	file://004-avoid-crash-by-using-size_t.diff \
 	"
