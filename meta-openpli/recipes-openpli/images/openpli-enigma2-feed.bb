@@ -109,6 +109,9 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-dlnaserver \
 	enigma2-plugin-extensions-blurayplayer \
 	enigma2-plugin-extensions-epgimport \
+	enigma2-plugin-extensions-install-ffmpeg \
+	enigma2-plugin-extensions-install-exteplayer3 \
+	enigma2-plugin-extensions-install-gstplayer \
 	enigma2-plugin-extensions-youtube \
 	enigma2-plugin-extensions-openmultiboot \
 	enigma2-plugin-extensions-modifyplifullhd \
