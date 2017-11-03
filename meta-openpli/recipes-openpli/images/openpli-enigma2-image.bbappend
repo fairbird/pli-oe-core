@@ -8,7 +8,9 @@ TEST57 = "${@bb.utils.contains("MACHINE", "dm500hd", "", "${TEST47}", d)}"
 TEST67 = "${@bb.utils.contains("MACHINE", "dm7020hd", "", "${TEST57}", d)}"
 TEST77 = "${@bb.utils.contains("MACHINE", "dm7020hdv2", "", "${TEST67}", d)}"
 TEST87 = "${@bb.utils.contains("MACHINE", "dm520", "", "${TEST77}", d)}"
-RT7777 = "${@bb.utils.contains("MACHINE", "dm500hdv2", "", "${TEST87}", d)}"
+TEST97 = "${@bb.utils.contains("MACHINE", "dm7080", "", "${TEST87}", d)}"
+TESTA7 = "${@bb.utils.contains("MACHINE", "dm820", "", "${TEST97}", d)}"
+RT7777 = "${@bb.utils.contains("MACHINE", "dm500hdv2", "", "${TESTA7}", d)}"
 
 ENIGMA2_PLUGINS_append = " \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", " \
