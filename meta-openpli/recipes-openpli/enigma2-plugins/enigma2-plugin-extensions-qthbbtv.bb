@@ -20,9 +20,10 @@ QtHbbtv = "enigma2/python/Plugins/Extensions/QtHbbtv"
 do_compile () {
 }
 
-FILES_${PN} =  "/${bindir} \
+FILES_${PN} =  "${bindir} \
 	/usr/lib/mozilla/plugins \
-	/usr/lib/${QtHbbtv}"
+	/usr/lib/${QtHbbtv} \
+	/usr/lib/fonts"
 
 do_install() {
 	install -d ${D}/usr/lib/${QtHbbtv}
