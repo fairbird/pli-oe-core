@@ -14,15 +14,15 @@ RT7777 = "${@bb.utils.contains("MACHINE", "dm500hdv2", "", "${TESTA7}", d)}"
 
 ENIGMA2_PLUGINS_append = " \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", " \
+	enigma2-plugin-softcams-oscam-emu", " \
 	enigma2-plugin-systemplugins-serviceapp \
-	enigma2-plugin-softcams-oscam", " \
-	enigma2-plugin-systemplugins-serviceapp \
-	enigma2-plugin-extensions-install-ffmpeg \
-	enigma2-plugin-softcams-oscam \
+	enigma2-plugin-softcams-oscam-emu \
 	enigma2-plugin-extensions-youtube \
+	enigma2-plugin-extensions-iptvplayer \
 	enigma2-plugin-extensions-blurayplayer", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "exteplayeronly", " \
-	enigma2-plugin-extensions-install-ffmpeg", "", d)} \
+	${@bb.utils.contains('OPENPLI_FEATURES', 'kodi', 'enigma2-plugin-extensions-kodi', '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'kodi', 'enigma2-plugin-extensions-kodi', '', d)} \
+	${@bb.utils.contains('OPENPLI_FEATURES', 'qthbbtv', 'enigma2-plugin-extensions-qthbbtv', '', d)} \
 	"
 
 IMAGE_INSTALL_append = " \
