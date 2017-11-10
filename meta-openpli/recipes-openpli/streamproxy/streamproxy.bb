@@ -17,6 +17,8 @@ S = "${WORKDIR}/git"
 
 inherit autotools
 
+CPPFLAGS_append = " -std=gnu++98 -Wno-implicit-fallthrough "
+
 do_install_append() {
 	install -m 755 -d ${D}/etc/init.d/
 	install -m 755 ${S}/src/streamproxy.sh ${D}/etc/init.d/
