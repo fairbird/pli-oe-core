@@ -28,3 +28,13 @@ ENIGMA2_PLUGINS_append = " \
 IMAGE_INSTALL_append = " \
 	${RT7777} \
 	"
+
+IMAGE_INSTALL_append_vusolo4k = " \
+	webkit-hbbtv-browser-vusolo4k \
+	enigma2-plugin-extensions-webkithbbtv \
+	"
+
+IMAGE_INSTALL_append_vuultimo4k = " \
+	webkit-hbbtv-browser-vuultimo4k \
+	enigma2-plugin-extensions-webkithbbtv \
+	"
