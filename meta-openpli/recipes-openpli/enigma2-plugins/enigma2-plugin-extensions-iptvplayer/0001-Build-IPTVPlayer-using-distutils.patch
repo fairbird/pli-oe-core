@@ -1,0 +1,73 @@
+From 4e9eb449159a2329fe4a0823a4802d0b4ad58754 Mon Sep 17 00:00:00 2001
+From: Athanasios Oikonomou <athoik@gmail.com>
+Date: Wed, 5 Aug 2015 14:18:29 +0300
+Subject: [PATCH] Build IPTVPlayer using distutils
+
+With distutils we can easily build IPTVPlayer using OE bitbake
+Also only po files required, cause setup_translate will automatically
+build mo files
+
+diff --git a/setup.py b/setup.py
+new file mode 100644
+index 0000000..ef5ef42
+--- /dev/null
++++ b/setup.py
+@@ -0,0 +1,12 @@
++from distutils.core import setup
++import setup_translate
++
++pkg = 'Extensions.IPTVPlayer'
++setup (name = 'enigma2-plugin-extensions-iptvplayer',
++       version = '1.0',
++       description = 'IPTV Player for E2',
++       package_dir = {pkg: 'IPTVPlayer'},
++       packages = [pkg],
++       package_data = {pkg: ['*.*', '*/*.*', '*/*/*.*', '*/*/*/*.*', '*/*/*/*/*.*']},
++       cmdclass = setup_translate.cmdclass, # for translation
++      )
+diff --git a/setup_translate.py b/setup_translate.py
+new file mode 100644
+index 0000000..e5cfb6a
+--- /dev/null
++++ b/setup_translate.py
+@@ -0,0 +1,37 @@
++# Language extension for distutils Python scripts. Based on this concept:
++# http://wiki.maemo.org/Internationalize_a_Python_application
++from distutils import cmd
++from distutils.command.build import build as _build
++import os
++
++class build_trans(cmd.Command):
++	description = 'Compile .po files into .mo files'
++	def initialize_options(self):
++		pass
++
++	def finalize_options(self):
++		pass
++
++	def run(self):
++		s = os.path.join('IPTVPlayer', 'locale')
++		for lang in os.listdir(s):
++			lc = os.path.join(s, lang, 'LC_MESSAGES')
++			if os.path.isdir(lc):
++				for f in os.listdir(lc):
++					if f.endswith('.po'):
++						src = os.path.join(lc, f)
++						dest = os.path.join(lc, f[:-2] + 'mo')
++						print "Language compile %s -> %s" % (src, dest)
++						if os.system("msgfmt '%s' -o '%s'" % (src, dest)) != 0:
++							raise Exception, "Failed to compile: " + src
++
++class build(_build):
++	sub_commands = _build.sub_commands + [('build_trans', None)]
++	def run(self):
++		_build.run(self)
++
++cmdclass = {
++	'build': build,
++	'build_trans': build_trans,
++}
++
+-- 
+1.7.10.4
+
