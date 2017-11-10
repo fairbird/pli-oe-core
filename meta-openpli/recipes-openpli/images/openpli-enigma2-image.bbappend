@@ -19,6 +19,7 @@ ENIGMA2_PLUGINS_append = " \
 	enigma2-plugin-softcams-oscam-emu \
 	enigma2-plugin-extensions-youtube \
 	enigma2-plugin-extensions-iptvplayer \
+	enigma2-plugin-skins-mx-hq9w \
 	enigma2-plugin-extensions-blurayplayer", d)} \
 	${@bb.utils.contains('OPENPLI_FEATURES', 'kodi', 'enigma2-plugin-extensions-kodi', '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'kodi', 'enigma2-plugin-extensions-kodi', '', d)} \
@@ -30,11 +31,9 @@ IMAGE_INSTALL_append = " \
 	"
 
 IMAGE_INSTALL_append_vusolo4k = " \
-	webkit-hbbtv-browser-vusolo4k \
-	enigma2-plugin-extensions-webkithbbtv \
+	enigma2-plugin-extensions-qthbbtv \
 	"
 
 IMAGE_INSTALL_append_vuultimo4k = " \
-	webkit-hbbtv-browser-vuultimo4k \
-	enigma2-plugin-extensions-webkithbbtv \
+	enigma2-plugin-extensions-qthbbtv \
 	"
