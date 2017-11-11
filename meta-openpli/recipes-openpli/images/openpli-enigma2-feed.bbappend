@@ -11,4 +11,5 @@ ENIGMA2_OPTIONAL_append = " \
 	enigma2-plugin-skins-dreamplexskins \
 	enigma2-plugin-skins-mx-hq9w \
 	enigma2-plugin-skins-mx-hq7 \
+	${@bb.utils.contains('OPENPLI_FEATURES', 'qthbbtv', 'enigma2-plugin-extensions-hbbtv-qt', '', d)} \
 	"
