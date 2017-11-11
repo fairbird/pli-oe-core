@@ -20,6 +20,7 @@ RDEPENDS_${PN} = " \
 	ffmpeg \
 	exteplayer3 \
 	gstplayer \
+	wget \
 	"
 
 PACKAGES =+ " ${PN}-src"
