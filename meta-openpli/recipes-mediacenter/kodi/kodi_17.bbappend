@@ -23,7 +23,7 @@ DEPENDS_apppend =  " \
 	libupnp \
 	"
 
-EXTRA_OECONF_append_bre2ze4k = "--with-gpu=v3d "
+EXTRA_OECONF_append_bre2ze4k = " --with-gpu=v3d "
 EXTRA_OECONF_append_hd51 = " --with-gpu=v3d "
 EXTRA_OECONF_append_vs1500 = " --with-gpu=v3d "
 EXTRA_OECONF_append_hd2400 = " --with-gpu=v3d "
@@ -32,8 +32,9 @@ EXTRA_OECONF_append_osmega = " --with-gpu=v3dplatform "
 EXTRA_OECONF_append_wetekplay = " --with-gpu=mali "
 
 EXTRA_KODI ?= "empty"
-EXTRA_KODI_vuduo2 = "vuplus"
 EXTRA_KODI_vusolo2 = "vuplus"
+EXTRA_KODI_vuduo2 = "vuplus"
+EXTRA_KODI_vusolose = "vuplus"
 EXTRA_KODI_vusolo4k = "vuplus4k"
 EXTRA_KODI_vusolose = "vuplus"
 EXTRA_KODI_vuultimo4k = "vuplus4k"
