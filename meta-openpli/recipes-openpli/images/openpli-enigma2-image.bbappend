@@ -21,9 +21,6 @@ ENIGMA2_PLUGINS_append = " \
 	enigma2-plugin-extensions-iptvplayer \
 	enigma2-plugin-skins-mx-hq9w \
 	enigma2-plugin-extensions-blurayplayer", d)} \
-	${@bb.utils.contains('OPENPLI_FEATURES', 'kodi', 'enigma2-plugin-extensions-kodi', '', d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'kodi', 'enigma2-plugin-extensions-kodi', '', d)} \
-	${@bb.utils.contains('OPENPLI_FEATURES', 'qthbbtv', 'enigma2-plugin-extensions-qthbbtv', '', d)} \
 	"
 
 IMAGE_INSTALL_append = " \
