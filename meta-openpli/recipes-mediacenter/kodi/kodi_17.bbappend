@@ -23,6 +23,11 @@ DEPENDS += " \
 	libupnp \
 	"
 
+RDEPENDS_${PN}_vusolo4k += "kodiegl-${MACHINE}"
+RDEPENDS_${PN}_vuultimo4k += "kodiegl-${MACHINE}"
+RDEPENDS_${PN}_vuuno4k += "kodiegl-${MACHINE}"
+RDEPENDS_${PN}_vuuno4kse += "kodiegl-${MACHINE}"
+
 EXTRA_OECONF_hd51 += "--with-gpu=v3d"
 EXTRA_OECONF_vs1500 += "--with-gpu=v3d"
 EXTRA_OECONF_hd2400 += "--with-gpu=v3d"
