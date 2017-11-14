@@ -49,7 +49,7 @@
 	url = http://github.com/GIDeveloperTeam/meta-gi.git
 [submodule "meta-gfutures"]
 	path = meta-gfutures
-	url = http://github.com/HD-Digital/meta-gfutures.git
+	url = https://github.com/MastaG/meta-gfutures.git
 [submodule "meta-sab"]
 	path = meta-sab
 	url = http://github.com/mariner2/meta-sab.git
