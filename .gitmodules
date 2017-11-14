@@ -31,7 +31,7 @@
 	url = http://github.com/XpeedDeveloperTeam/meta-xpeedc.git
 [submodule "meta-zgemma"]
 	path = meta-zgemma
-	url = http://github.com/zgemma-star/meta-zgemma.git
+	url = https://github.com/MastaG/meta-zgemma.git
 [submodule "meta-miraclebox"]
 	path = meta-miraclebox
 	url = http://github.com/miraclebox-git/meta-miraclebox.git
