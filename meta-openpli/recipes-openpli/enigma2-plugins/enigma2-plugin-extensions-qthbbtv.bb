@@ -12,20 +12,6 @@ SRC_URI = "git://github.com/zgemma-star/e2plugins.git;protocol=git"
 
 PACKAGES = "${PN}"
 RDEPENDS_${PN}  = "qtwebkit"
-RDEPENDS_${PN}_append_hd51 = " hd-v3ddriver-${MACHINE} hd-qteglfs-platform "
-RDEPENDS_${PN}_append_vs1500 = " hd-v3ddriver-${MACHINE} hd-qteglfs-platform "
-RDEPENDS_${PN}_append_hd2400 = " hd-v3ddriver-${MACHINE} hd-qteglfs-platform "
-RDEPENDS_${PN}_append_bre2ze4k = " hd-v3ddriver-${MACHINE} hd-qteglfs-platform "
-RDEPENDS_${PN}_append_wetekplay = " opengl-amlogic "
-RDEPENDS_${PN}_append_osmega = " v3d-libgles-${MACHINE} "
-RDEPENDS_${PN}_append_h7 = " zgemma-v3ddriver-${MACHINE} "
-RDEPENDS_${PN}_append_vuduo2 = " libgles-${MACHINE} "
-RDEPENDS_${PN}_append_vuuno4k = " libgles-${MACHINE} "
-RDEPENDS_${PN}_append_vuuno4kse = " libgles-${MACHINE} "
-RDEPENDS_${PN}_append_vuultimo4k = " libgles-${MACHINE} "
-RDEPENDS_${PN}_append_vusolo2 = " libgles-${MACHINE} "
-RDEPENDS_${PN}_append_vusolo4k = " libgles-${MACHINE} "
-RDEPENDS_${PN}_append_vusolose = " libgles-${MACHINE} "
 
 S = "${WORKDIR}/git/qthbbtv"
 
@@ -34,10 +20,9 @@ QtHbbtv = "enigma2/python/Plugins/Extensions/QtHbbtv"
 do_compile () {
 }
 
-FILES_${PN} =  "${bindir} \
+FILES_${PN} =  "/${bindir} \
 	/usr/lib/mozilla/plugins \
-	/usr/lib/${QtHbbtv} \
-	/usr/lib/fonts"
+	/usr/lib/${QtHbbtv}"
 
 do_install() {
 	install -d ${D}/usr/lib/${QtHbbtv}
