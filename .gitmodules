@@ -20,6 +20,9 @@
 [submodule "meta-hd"]
 	path = meta-hd
 	url = https://github.com/HD-Digital/meta-hd.git
+[submodule "meta-vuplus"]
+	path = meta-vuplus
+	url = https://github.com/MastaG/meta-vuplus.git
 [submodule "meta-xp"]
 	path = meta-xp
 	url = https://github.com/XP-Master/meta-xp.git
