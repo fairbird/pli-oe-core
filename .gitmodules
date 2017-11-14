@@ -20,6 +20,9 @@
 [submodule "meta-hd"]
 	path = meta-hd
 	url = https://github.com/HD-Digital/meta-hd.git
+[submodule "meta-vuplus"]
+	path = meta-vuplus
+	url = https://github.com/MastaG/meta-vuplus
 [submodule "meta-xp"]
 	path = meta-xp
 	url = https://github.com/XP-Master/meta-xp.git
@@ -44,6 +47,9 @@
 [submodule "meta-gi"]
 	path = meta-gi
 	url = http://github.com/GIDeveloperTeam/meta-gi.git
+[submodule "meta-gfutures"]
+	path = meta-gfutures
+	url = https://github.com/MastaG/meta-gfutures.git
 [submodule "meta-sab"]
 	path = meta-sab
 	url = http://github.com/mariner2/meta-sab.git
