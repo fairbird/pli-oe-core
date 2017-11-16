@@ -1,0 +1,87 @@
+--- a/common/unicode/umachine.h	2017-03-16 19:01:12 UTC
++++ b/common/unicode/umachine.h
+@@ -295,7 +295,7 @@ typedef int8_t UBool;
+  * If 1, then char16_t is a typedef and not a real type (yet)
+  * @internal
+  */
+-#if (U_PLATFORM == U_PF_AIX) && defined(__cplusplus) &&(U_CPLUSPLUS_VERSION < 11)
++#if defined(__cplusplus) && (U_CPLUSPLUS_VERSION < 11)
+ // for AIX, uchar.h needs to be included
+ # include <uchar.h>
+ # define U_CHAR16_IS_TYPEDEF 1
+--- a/common/unicode/unistr.h	2017-03-29 04:44:37 UTC
++++ b/common/unicode/unistr.h
+@@ -117,12 +117,20 @@ class UnicodeStringAppendable;  // unicode/appendable.
+  * The string parameter must be a C string literal.
+  * The length of the string, not including the terminating
+  * <code>NUL</code>, must be specified as a constant.
++ * The U_STRING_DECL macro should be invoked exactly once for one
++ * such string variable before it is used.
+  * @stable ICU 2.0
+  */
+ #if !U_CHAR16_IS_TYPEDEF
+ # define UNICODE_STRING(cs, _length) icu::UnicodeString(TRUE, u ## cs, _length)
++#elif defined(U_DECLARE_UTF16)
++# define UNICODE_STRING(cs, _length) icu::UnicodeString(TRUE, (const char16_t *)U_DECLARE_UTF16(cs), _length)
++#elif U_SIZEOF_WCHAR_T==U_SIZEOF_UCHAR && (U_CHARSET_FAMILY==U_ASCII_FAMILY || (U_SIZEOF_UCHAR == 2 && defined(U_WCHAR_IS_UTF16)))
++# define UNICODE_STRING(cs, _length) icu::UnicodeString(TRUE, (const char16_t *)L ## cs, _length)
++#elif U_SIZEOF_UCHAR==1 && U_CHARSET_FAMILY==U_ASCII_FAMILY
++# define UNICODE_STRING(cs, _length) icu::UnicodeString(TRUE, (const char16_t *)cs, _length)
+ #else
+-# define UNICODE_STRING(cs, _length) icu::UnicodeString(TRUE, (const char16_t*)u ## cs, _length)
++# define UNICODE_STRING(cs, _length) icu::UnicodeString(cs, _length, US_INV)
+ #endif
+ 
+ /**
+@@ -3985,7 +3993,7 @@ UnicodeString::isBufferWritable() const
+ inline const char16_t *
+ UnicodeString::getBuffer() const {
+   if(fUnion.fFields.fLengthAndFlags&(kIsBogus|kOpenGetBuffer)) {
+-    return nullptr;
++    return NULL;
+   } else if(fUnion.fFields.fLengthAndFlags&kUsingStackBuffer) {
+     return fUnion.fStackFields.fBuffer;
+   } else {
+--- a/common/unicode/uvernum.h	2017-11-15 10:55:09.314565072 +0100
++++ b/common/unicode/uvernum.h	2017-11-15 10:57:01.159449298 +0100
+@@ -125,7 +125,7 @@
+  *  This value will change in the subsequent releases of ICU
+  *  @stable ICU 2.6
+  */
+-#if U_PLATFORM_HAS_WINUWP_API == 0
++#ifndef U_PLATFORM_HAS_WINUWP_API
+ #define U_ICU_VERSION_SHORT "59"
+ #else
+ // U_DISABLE_RENAMING does not impact dat file name
+https://github.com/Aegisub/Aegisub/commit/dd67db47cb22
+--- a/common/unicode/platform.h	2017-03-22 19:06:26 UTC
++++ b/common/unicode/platform.h
+@@ -382,8 +382,8 @@
+  */
+ #ifdef U_IS_BIG_ENDIAN
+     /* Use the predefined value. */
+-#elif defined(BYTE_ORDER) && defined(BIG_ENDIAN)
+-#   define U_IS_BIG_ENDIAN (BYTE_ORDER == BIG_ENDIAN)
++#elif defined(_BYTE_ORDER) && defined(_BIG_ENDIAN)
++#   define U_IS_BIG_ENDIAN (_BYTE_ORDER == _BIG_ENDIAN)
+ #elif defined(__BYTE_ORDER__) && defined(__ORDER_BIG_ENDIAN__)
+     /* gcc */
+ #   define U_IS_BIG_ENDIAN (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+@@ -498,11 +498,15 @@
+ #   define U_CPLUSPLUS_VERSION 1
+ #endif
+ 
+-#if (U_PLATFORM == U_PF_AIX || U_PLATFORM == U_PF_OS390) && defined(__cplusplus) &&(U_CPLUSPLUS_VERSION < 11)
++#if defined(__cplusplus) && (U_CPLUSPLUS_VERSION < 11)
+ // add in std::nullptr_t
+ namespace std {
++#if (U_PLATFORM == U_PF_AIX || U_PLATFORM == U_PF_OS390)
+   typedef decltype(nullptr) nullptr_t;
+-};
++#elif defined(__GNUC__) && !defined(__clang__)
++  typedef __decltype(__null) nullptr_t;
++#endif
++}
+ #endif
+ 
+ /**
