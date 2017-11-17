@@ -1,9 +1,6 @@
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI += "file://get-rid-of-orgdream-check.patch \
-"
-
 python do_cleanup () {
     # contains: MACHINE, box image, remote image, remote map
     boxtypes = [
