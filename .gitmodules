@@ -73,4 +73,4 @@
 	url = https://github.com/MastaG/meta-ini.git
 [submodule "meta-dream"]
 	path = meta-dream
-	url = https://github.com/DMM-PLi/meta-dream.git
+	url = https://github.com/MastaG/meta-dream.git
