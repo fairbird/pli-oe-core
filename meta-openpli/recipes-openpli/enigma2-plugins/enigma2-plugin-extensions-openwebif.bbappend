@@ -5,6 +5,7 @@ SRC_URI += "file://get-rid-of-orgdream-check.patch \
 "
 
 python do_cleanup () {
+    # contains: MACHINE, box image, remote image, remote map
     boxtypes = [
         ('dm800', 'dm800.jpg', 'dm_normal.png', 'dmm.html'),
         ('dm500hd', 'dm500hd.png', 'dm_normal.png', 'dmm.html'),
@@ -21,6 +22,7 @@ python do_cleanup () {
         ('osmega', 'osmega.png', 'osmini.png', 'osmini.html'),
         ('osmini', 'osmini.png', 'osmini.png', 'osmini.html'),
         ('osminiplus', 'osminiplus.png', 'osmini.png', 'osmini.html'),
+        ('osnino', 'osnino.png', 'edision1.png', 'edision1.html'),
         ('formuler1', 'formuler1.png', 'formuler1.png', 'formuler1.html'),
         ('formuler3', 'formuler3.png', 'formuler1.png', 'formuler1.html'),
         ('formuler4', 'formuler4.png', 'formuler1.png', 'formuler1.html'),
@@ -58,6 +60,7 @@ python do_cleanup () {
         ('vuuno', 'uno.png', 'vu_normal.png', 'vu_normal.html'),
         ('vuuno4k', 'uno4k.png', 'vu_normal.png', 'vu_normal.html'),
         ('vuzero', 'zero.png', 'vu_normal.png', 'vu_normal.html'),
+        ('vuuno4kse', 'uno4kse.png', 'vuuno4kse.png', 'vuuno4kse.html'),
         ('wetekplay', 'wetekplay.png', 'wetekplay.png', 'wetekplay.html'),
         ('xp1000', 'xp1000.png', 'xp_rc14_normal.png', 'xp1000.html'),
         ('xpeedc', 'xpeedlx.png', 'xpeedlx.png', 'xpeedlx.html'),

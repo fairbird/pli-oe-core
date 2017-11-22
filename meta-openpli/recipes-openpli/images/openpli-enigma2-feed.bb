@@ -53,6 +53,7 @@ OPTIONAL_PACKAGES += " \
 	mtools \
 	nano \
 	net-tools \
+	${@bb.utils.contains('TARGET_FPU', 'soft', '', 'nodejs', d)} \
 	ntfs-3g \
 	ntp \
 	ofgwrite \
@@ -70,6 +71,7 @@ OPTIONAL_PACKAGES += " \
 	python-mechanize \
 	python-lxml \
 	python-js2py \
+	python-pyexecjs \
 	picocom \
 	ppp \
 	rsync \
@@ -91,6 +93,7 @@ OPTIONAL_PACKAGES += " \
 	vim \
 	wget \
 	wscan \
+	yafc \
 	zeroconf \
 	zip \
 	zsh \
@@ -117,7 +120,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-systemplugins-signalfinder \
 	enigma2-plugin-systemplugins-extnumberzap \
 	enigma2-plugin-systemplugins-serviceapp \
-	enigma2-plugin-systemplugins-plexdvrapi \
+	enigma2-plugin-systemplugins-hrtunerproxy \
 	enigma2-plugin-systemplugins-quadpip \
 	enigma2-plugin-systemplugins-extrafancontrol \
 	enigma2-plugin-extensions-historyzapselector \

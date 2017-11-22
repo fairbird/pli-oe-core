@@ -64,7 +64,6 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-gfutures \
 	$(CURDIR)/meta-ini \
 	$(CURDIR)/meta-xpeedc \
-	$(CURDIR)/meta-wetek \
 	$(CURDIR)/meta-zgemma \
 	$(CURDIR)/meta-edision \
 	$(CURDIR)/meta-miraclebox \
@@ -72,6 +71,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-gi \
 	$(CURDIR)/meta-sab \
 	$(CURDIR)/meta-gigablue \
+	$(CURDIR)/meta-amiko \
 	$(CURDIR)/meta-local \
 	$(CURDIR)/meta-qt5
 
