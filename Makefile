@@ -54,7 +54,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-openembedded/meta-python \
 	$(CURDIR)/openembedded-core/meta \
 	$(CURDIR)/meta-openpli \
-	$(CURDIR)/meta-dreambox \
+	$(CURDIR)/meta-dream \
 	$(CURDIR)/meta-vuplus \
 	$(CURDIR)/meta-xsarius.pli5 \
 	$(CURDIR)/meta-xp \
