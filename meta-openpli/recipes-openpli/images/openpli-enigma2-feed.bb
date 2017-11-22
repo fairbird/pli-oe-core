@@ -52,7 +52,7 @@ OPTIONAL_PACKAGES += " \
 	mtools \
 	nano \
 	net-tools \
-	${@bb.utils.contains('TARGET_FPU', 'soft', '', 'nodejs', d)} \
+	${@bb.utils.contains("TARGET_FPU", "soft", "","nodejs", d)} \
 	ntfs-3g \
 	ntp \
 	ofgwrite \
