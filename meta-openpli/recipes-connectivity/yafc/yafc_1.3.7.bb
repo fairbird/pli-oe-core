@@ -15,12 +15,6 @@ SRC_URI = "git://github.com/sebastinas/yafc.git"
 
 S = "${WORKDIR}/git"
 
-inherit gitpkgv autotools-brokensep pkgconfig
-do_configure_prepend() {
-	# Remove this macro as it's provided by glib-2.0-native
-	rm -f ${S}/m4/glib-gettext.m4
-}
-
 inherit gitpkgv autotools-brokensep pkgconfig gettext
 PV = "1.3.7+git${SRCPV}"
 PKGV = "1.3.7+git${GITPKGV}"
