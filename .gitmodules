@@ -74,3 +74,6 @@
 [submodule "meta-dream"]
 	path = meta-dream
 	url = https://github.com/DMM-PLi/meta-dream.git
+[submodule "meta-raspberrypi"]
+	path = meta-raspberrypi
+	url = https://github.com/RaspberryPLi/meta-raspberrypi.git
