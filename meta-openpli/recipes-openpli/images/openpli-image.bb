@@ -16,6 +16,10 @@ python do_rootfs_prepend() {
 }
 rm_work_rootfs[cleandirs] = ""
 
+DEPENDS += " \
+	zip-native \
+"
+
 IMAGE_INSTALL = "\
 	${ROOTFS_PKGMANAGE} \
 	3rd-party-feed-configs \
@@ -32,6 +36,8 @@ IMAGE_INSTALL = "\
 	modutils-loadscript \
 	nfs-utils-client \
 	openpli-bootlogo \
+	openssh-sftp \
+	openssh-sftp-server \
 	opkg \
 	packagegroup-base \
 	packagegroup-core-boot \
