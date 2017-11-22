@@ -43,7 +43,6 @@ RRECOMMENDS_${PN} = " \
 	"
 
 PYTHON_RDEPS = " \
-	python-asn1crypto \
 	python-numbers \
 	python-codecs \
 	python-constantly \
