@@ -13,7 +13,6 @@ SRC_URI = "https://security.appspot.com/downloads/vsftpd-${PV}.tar.gz \
            file://makefile-strip.patch \
            file://vsftpd.conf \
            file://login-blank-password.patch \
-           file://change-secure_chroot_dir.patch \
 "
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=a6067ad950b28336613aed9dd47b1271 \
