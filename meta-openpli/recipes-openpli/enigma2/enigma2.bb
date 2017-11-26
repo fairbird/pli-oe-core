@@ -58,6 +58,7 @@ PYTHON_RDEPS = " \
 	python-netserver \
 	python-pickle \
 	python-re \
+	python-service-identity \
 	python-shell \
 	python-threading \
 	python-twisted-core \
