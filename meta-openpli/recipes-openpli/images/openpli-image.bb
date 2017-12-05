@@ -16,6 +16,10 @@ python do_rootfs_prepend() {
 }
 rm_work_rootfs[cleandirs] = ""
 
+DEPENDS += " \
+	zip-native \
+"
+
 IMAGE_INSTALL = "\
 	${ROOTFS_PKGMANAGE} \
 	3rd-party-feed-configs \
