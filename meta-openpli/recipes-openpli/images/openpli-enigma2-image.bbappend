@@ -20,6 +20,7 @@ ENIGMA2_PLUGINS_append = " \
 	enigma2-plugin-extensions-youtube \
 	enigma2-plugin-extensions-iptvplayer \
 	enigma2-plugin-skins-mx-hq9w \
+	enigma2-plugin-skins-glamouraurafhd \
 	enigma2-plugin-extensions-blurayplayer", d)} \
 	"
 
