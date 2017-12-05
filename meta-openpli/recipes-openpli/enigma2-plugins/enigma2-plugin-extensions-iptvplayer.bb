@@ -21,6 +21,7 @@ RDEPENDS_${PN} = " \
 	exteplayer3 \
 	gstplayer \
 	wget \
+	hlsdl \
 	"
 
 PACKAGES =+ " ${PN}-src"
