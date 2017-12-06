@@ -1,1 +1,1 @@
-CFLAGS_append = " -pthread "
+LDFLAGS_append = " -pthread "
