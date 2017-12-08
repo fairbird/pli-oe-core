@@ -14,9 +14,9 @@ RT7777 = "${@bb.utils.contains("MACHINE", "dm500hdv2", "", "${TESTA7}", d)}"
 
 ENIGMA2_PLUGINS_append = " \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", " \
-	enigma2-plugin-softcams-oscam-emu", " \
+	enigma2-plugin-softcams-oscam", " \
 	enigma2-plugin-systemplugins-serviceapp \
-	enigma2-plugin-softcams-oscam-emu \
+	enigma2-plugin-softcams-oscam \
 	enigma2-plugin-extensions-youtube \
 	enigma2-plugin-extensions-iptvplayer \
 	enigma2-plugin-skins-mx-hq9w \
