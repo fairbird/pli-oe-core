@@ -15,13 +15,27 @@ SRC_URI_append += "\
 	"
 
 SRC_URI_append_osmega += "file://EGLNativeTypeV3D-platform.patch"
+SRC_URI_append_galaxy4k += "file://EGLNativeTypeV3D-nxpl-old.patch"
+SRC_URI_append_revo4k += "file://EGLNativeTypeV3D-nxpl-old.patch"
+
+PACKAGECONFIG_append = " mysql "
 
 DEPENDS += " \
 	bluez5 \
 	libbluray \
 	nfs-utils \
 	libupnp \
+	libshairport \
+	libnfs \
+	alsa-lib \
+	alsa-plugins \
+	virtual/libsdl \
 	"
+
+CFLAGS_append_galaxy4k = " -DBROADCOM_PLATFORM=1 "
+CXXFLAGS_append_galaxy4k = " -DBROADCOM_PLATFORM=1 "
+CFLAGS_append_revo4k = " -DBROADCOM_PLATFORM=1 "
+CXXFLAGS_append_revo4k = " -DBROADCOM_PLATFORM=1 "
 
 EXTRA_OECONF_hd51 += "--with-gpu=v3d"
 EXTRA_OECONF_vs1500 += "--with-gpu=v3d"
@@ -29,6 +43,8 @@ EXTRA_OECONF_hd2400 += "--with-gpu=v3d"
 EXTRA_OECONF_h7 += "--with-gpu=v3d"
 EXTRA_OECONF_osmega += "--with-gpu=v3dplatform"
 EXTRA_OECONF_wetekplay += "--with-gpu=mali"
+EXTRA_OECONF_galaxy4k += "--with-gpu=v3d"
+EXTRA_OECONF_revo4k += "--with-gpu=v3d"
 
 EXTRA_KODI ?= "empty"
 EXTRA_KODI_vusolo2 = "vuplus"
