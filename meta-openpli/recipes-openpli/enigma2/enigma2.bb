@@ -45,10 +45,13 @@ RRECOMMENDS_${PN} = " \
 PYTHON_RDEPS = " \
 	python-numbers \
 	python-codecs \
+	python-constantly \
 	python-core \
 	python-crypt \
 	python-fcntl \
+	python-hyperlink \
 	python-importlib \
+	python-incremental \
 	python-lang \
 	python-netclient \
 	python-netserver \

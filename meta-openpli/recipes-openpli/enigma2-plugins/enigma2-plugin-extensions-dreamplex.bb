@@ -3,12 +3,12 @@ MAINTAINER = "Don Davici"
 
 require conf/license/license-gplv2.inc
 
-inherit autotools-brokensep gitpkgv pythonnative
+inherit autotools-brokensep gitpkgv pythonnative gettext
 
 PV = "2.1.3+git${SRCPV}"
 PKGV = "2.1.3+git${GITPKGV}"
 
-DEPENDS = "python"
+DEPENDS = "python virtual/gettext"
 RDEPENDS_${PN} += "curl mjpegtools python-ctypes libshowiframe0"
 
 SRC_URI = " \
