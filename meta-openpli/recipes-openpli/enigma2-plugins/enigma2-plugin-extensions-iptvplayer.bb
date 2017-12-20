@@ -17,16 +17,7 @@ inherit allarch distutils-openplugins
 
 RRECOMMENDS_${PN} = " \
 	python-core \
-	ffmpeg \
-	exteplayer3 \
-	gstplayer \
-	wget \
-	hlsdl \
-	lsdir \
-	f4mdump \
-	gst-ifdsrc \
-	iptvsubparser \
-	rtmpdump \
+	enigma2-plugin-extensions-iptvplayer-deps \
 	"
 
 PACKAGES =+ " ${PN}-src"
