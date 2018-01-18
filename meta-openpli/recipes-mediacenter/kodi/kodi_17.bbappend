@@ -16,11 +16,18 @@ SRC_URI_append += "\
 
 SRC_URI_append_osmega += "file://EGLNativeTypeV3D-platform.patch"
 
+PACKAGECONFIG_append = " mysql " 
+
 DEPENDS += " \
 	bluez5 \
 	libbluray \
 	nfs-utils \
 	libupnp \
+	libshairport \
+	libnfs \
+	alsa-lib \
+	alsa-plugins \
+	virtual/libsdl \
 	"
 
 EXTRA_OECONF_hd51 += "--with-gpu=v3d"
