@@ -11,7 +11,7 @@ PKGV = "1.0+git${GITPKGV}"
 SRC_URI = "git://github.com/zgemma-star/e2plugins.git;protocol=git"
 
 PACKAGES = "${PN}"
-RDEPENDS_${PN}  = "qtwebkit virtual/libgles2"
+RDEPENDS_${PN}  = "qtwebkit"
 
 S = "${WORKDIR}/git/qthbbtv"
 
