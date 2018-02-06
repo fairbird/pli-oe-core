@@ -71,9 +71,6 @@
 [submodule "meta-ini"]
 	path = meta-ini
 	url = https://github.com/MastaG/meta-ini.git
-[submodule "meta-raspberrypi"]
-	path = meta-raspberrypi
-	url = https://github.com/RaspberryPLi/meta-raspberrypi.git
 [submodule "meta-dream"]
 	path = meta-dream
 	url = https://github.com/DMM-PLi/meta-dream.git
